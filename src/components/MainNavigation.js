@@ -3,63 +3,59 @@ import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
-import "./MainNavigation.css";
+// import "./MainNavigation.css";
+import "./MainNavigation.scss";
 
 const MainNavigation = () => {
   const [toggle, setToggle] = useState(false);
-  return (
-    <header className="header">
-      {/* <nav>
-        <ul className="list">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-              end
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
-            >
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-      </nav> */}
 
-      <nav className="app__navbar">
-        <ul className="app__navbar-links list">
-          {["Home", "About", "Contact"].map((item) => (
-            <li className="app__flex p-text" key={`link-${item}`}>
-              <div />
-              {/* <a href={`#${item}`}>{item}</a> */}
-              <li>
-                <NavLink
-                  to={`/${item}`}
-                  className={({ isActive }) =>
-                    isActive ? "active" : undefined
-                  }
-                >
-                  {item}
-                </NavLink>
-              </li>
+  return (
+    <nav className="app__navbar">
+      {/* <div className="app__navbar-logo">
+        <img src={images.logo} alt="logo" />
+      </div> */}
+
+      <div>logo</div>
+
+      <ul className="app__navbar-links list">
+        {["Home", "About", "Contact"].map((item) => (
+          <li className="app__flex p-text" key={`link-${item}`}>
+            <div />
+
+            <li>
+              <NavLink
+                to={`/${item}`}
+                className={({ isActive }) => (isActive ? "active" : undefined)}
+              >
+                {item}
+              </NavLink>
             </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+          </li>
+        ))}
+      </ul>
+
+      <div className="app__navbar-menu">
+        {!toggle && <HiMenuAlt4 onClick={() => setToggle(true)} />}
+
+        {toggle && (
+          <motion.div
+            whileInView={{ x: [300, 0] }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
+            <HiX onClick={() => setToggle(false)} />
+            <ul>
+              {["Home", "About", "Contact"].map((item) => (
+                <li key={item}>
+                  <NavLink to={`/${item}`} onClick={() => setToggle(false)}>
+                    {item}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </div>
+    </nav>
   );
 };
 
