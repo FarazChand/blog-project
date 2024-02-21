@@ -1,19 +1,20 @@
+import React, { useState } from "react";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import React from "react";
 
-import classes from "./MainNavigation.module.css";
+import "./MainNavigation.css";
 
 const MainNavigation = () => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <header className={classes.header}>
-      <nav>
-        <ul className={classes.list}>
+    <header className="header">
+      {/* <nav>
+        <ul className="list">
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
+              className={({ isActive }) => (isActive ? "active" : undefined)}
               end
             >
               Home
@@ -22,9 +23,7 @@ const MainNavigation = () => {
           <li>
             <NavLink
               to="/about"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
+              className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               About
             </NavLink>
@@ -32,13 +31,32 @@ const MainNavigation = () => {
           <li>
             <NavLink
               to="/contact"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
+              className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               Contact
             </NavLink>
           </li>
+        </ul>
+      </nav> */}
+
+      <nav className="app__navbar">
+        <ul className="app__navbar-links list">
+          {["Home", "About", "Contact"].map((item) => (
+            <li className="app__flex p-text" key={`link-${item}`}>
+              <div />
+              {/* <a href={`#${item}`}>{item}</a> */}
+              <li>
+                <NavLink
+                  to={`/${item}`}
+                  className={({ isActive }) =>
+                    isActive ? "active" : undefined
+                  }
+                >
+                  {item}
+                </NavLink>
+              </li>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
