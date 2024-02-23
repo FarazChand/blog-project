@@ -1,6 +1,13 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { AboutPage, BlogPage, ContactPage, HomePage, RootPage } from "./pages";
+import {
+  AboutPage,
+  BlogPage,
+  ContactPage,
+  PostsPage,
+  HomePage,
+  RootPage,
+} from "./pages";
 
 function App() {
   const router = createBrowserRouter([
@@ -12,10 +19,7 @@ function App() {
           index: true,
           element: <HomePage />,
         },
-        {
-          path: "/:blog",
-          element: <BlogPage />,
-        },
+
         {
           path: "/about",
           element: <AboutPage />,
@@ -23,6 +27,18 @@ function App() {
         {
           path: "/contact",
           element: <ContactPage />,
+        },
+        {
+          path: "/posts",
+          element: <PostsPage />,
+        },
+        {
+          path: "/posts/:tag",
+          element: <PostsPage />,
+        },
+        {
+          path: "/posts/post/:blog",
+          element: <BlogPage />,
         },
       ],
     },

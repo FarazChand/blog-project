@@ -1,101 +1,103 @@
-// .header {
-//   max-width: 60rem;
-//   margin: auto;
-//   padding: 2rem;
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-.app__navbar {
-  width: 100%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  // position: fixed;
-  z-index: 2;
-}
-
-.app__navbar-logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  img {
-    width: 90px;
-    height: 20px;
-
-    @media screen and (min-width: 2000px) {
-      width: 180px;
-      height: 40px;
-    }
-  }
-}
-
-.app__navbar-links {
-  flex: 1;
+header {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
+  padding: 1em 0;
+  background-color: var(--color-tertiary);
 
-  list-style: none;
+  .navbar {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 2em 0 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 
-  li {
-    margin: 0 1rem;
-    cursor: pointer;
-
-    flex-direction: column;
-
-    div {
-      width: 5px;
-      height: 5px;
-      background: transparent;
-      border-radius: 50%;
-
-      margin-bottom: 5px;
+    @media screen and (max-width: 400px) {
+      padding: 0 2em 0 2em;
     }
 
-    a {
-      color: var(--gray-color);
-      text-decoration: none;
-      flex-direction: column;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: all 0.3s ease-in-out;
+    .logo {
+      display: flex;
+      justify-content: start;
 
-      &:hover {
-        color: var(--secondary-color);
+      font-size: 2.25rem;
+      font-weight: bold;
+      color: var(--color-primary);
+      width: 250px;
+
+      a {
+        display: flex;
+        justify-content: start;
       }
     }
 
-    &:hover {
-      div {
-        background: var(--secondary-color);
+    .nav-container {
+      display: flex;
+      align-items: baseline;
+
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+
+      .navbar-list {
+        display: flex;
+        justify-content: flex-start;
+
+        .navbar-item {
+          margin: 0 2em;
+
+          a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.6rem;
+            font-weight: 100;
+          }
+
+          .active {
+            // color: red;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .mobile-menu {
+      @media screen and (min-width: 900px) {
+        display: none;
       }
     }
   }
 
-  @media screen and (max-width: 900px) {
-    display: none;
+  .darkmode-icon {
+    height: 25px;
+    width: 25px;
+    align-self: center;
+    margin-right: 5em;
+    color: grey;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: black;
+    }
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
   }
 }
 
-.app__navbar-menu {
+//
+
+.mobile-menu {
   width: 35px;
   height: 35px;
-  border-radius: 50%;
+  // border-radius: 50%;
   position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-color);
 
   svg {
     width: 70%;
@@ -103,7 +105,7 @@
     color: var(--white-color);
   }
 
-  div {
+  .motion-div {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -111,7 +113,7 @@
     z-index: 5;
     padding: 1rem;
 
-    width: 80%;
+    width: 90%;
     height: 100vh;
 
     display: flex;
@@ -119,10 +121,12 @@
     align-items: flex-end;
     flex-direction: column;
 
+    background-color: var(--color-neutral-100);
+
     // background: url("../../assets/bgWhite.png");
-    background-color: var(--white-color);
-    background-size: cover;
-    background-repeat: repeat;
+    // background-color: var(--white-color);
+    // background-size: cover;
+    // background-repeat: repeat;
 
     box-shadow: 0 0 20px rgba(168, 168, 168, 0.2);
 
@@ -149,22 +153,32 @@
         margin: 1rem;
 
         a {
-          color: var(--gray-color);
+          color: black;
           text-decoration: none;
-          font-size: 1rem;
-          text-transform: uppercase;
+          font-size: 1.6rem;
+          // text-transform: uppercase;
           font-weight: 500;
 
           transition: all 0.3s ease-in-out;
 
           &:hover {
-            color: var(--secondary-color);
+            color: red;
           }
         }
       }
     }
     @media screen and (min-width: 900px) {
       display: none;
+    }
+
+    .icon-container {
+      width: 100%;
+
+      .mobile-darkmode-icon {
+        justify-self: flex-start;
+        width: 25px;
+        height: 25px;
+      }
     }
   }
   @media screen and (min-width: 900px) {
