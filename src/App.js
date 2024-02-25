@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import { loader as blogDataLoader } from "./pages/Home";
+
 import {
   AboutPage,
   BlogPage,
@@ -14,6 +16,8 @@ function App() {
     {
       path: "/",
       element: <RootPage />,
+      loader: blogDataLoader,
+      id: "blog-data",
       children: [
         {
           index: true,
@@ -37,7 +41,7 @@ function App() {
           element: <PostsPage />,
         },
         {
-          path: "/posts/post/:blog",
+          path: "/posts/post/:blogId",
           element: <BlogPage />,
         },
       ],

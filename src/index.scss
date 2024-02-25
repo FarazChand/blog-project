@@ -1,0 +1,78 @@
+:root {
+  /* Preset Colors */
+  --color-primary: hsl(245deg, 100%, 60%);
+  --color-secondary: hsl(333deg, 100%, 45%);
+  --color-tertiary: hsl(204deg, 67%, 85%);
+  --color-neutral-100: #fff;
+  --color-text: hsl(222deg, 22%, 5%);
+
+  /* Preset Fonts */
+  --ff-primary: "Poppins", sans-serif;
+  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* General */
+body {
+  font-family: var(--ff-primary);
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: #333;
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-text);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  //   margin-top: 3em;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 1.5em;
+
+  //   flex-direction: column;
+  //   align-items: center;
+
+  @media screen and (min-width: 1110px) {
+    display: flex;
+    justify-content: center;
+    padding: 0 3em;
+    // flex-direction: row;
+
+    gap: 5em;
+  }
+}

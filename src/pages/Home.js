@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteLoaderData, json } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 import { urlFor, client } from "../client";
@@ -9,15 +9,17 @@ import "./Home.scss";
 const tags = ["React", "CSS", "Career", "JavaScript", "Other"];
 
 const HomePage = () => {
-  const [blogs, setBlogs] = useState([]);
+  // const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    const query = "*[_type == 'blog']";
+  // useEffect(() => {
+  //   const query = "*[_type == 'blog']";
 
-    client.fetch(query).then((data) => {
-      setBlogs(data);
-    });
-  }, []);
+  //   client.fetch(query).then((data) => {
+  //     setBlogs(data);
+  //   });
+  // }, []);
+
+  const blogs = useRouteLoaderData("blog-data");
 
   const popularTitles = [
     "How to be JS Master",
@@ -79,3 +81,16 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+export async function loader({ request, params }) {
+  const query = "*[_type == 'blog']";
+
+  const response = await client.fetch(query);
+
+  // if (!response.ok) {
+  //   console.log(response);
+  //   throw json({ message: "Could not fetch events." }, { status: 500 });
+  // }
+
+  return response;
+}
