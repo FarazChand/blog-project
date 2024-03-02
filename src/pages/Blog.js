@@ -17,9 +17,7 @@ const BlogPage = () => {
           {selectedBlog.title && <h1>{selectedBlog.title}</h1>}
           {selectedBlog.paragraph.map((section) => (
             <div key={section.id}>
-              {section.title && section.title != "intro" && (
-                <h2>{section.title}</h2>
-              )}
+              {section.title && <h2>{section.title}</h2>}
               <p>{section.content}</p>
             </div>
           ))}

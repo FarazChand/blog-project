@@ -4,9 +4,10 @@ import { Link, useRouteLoaderData, json } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 import { urlFor, client } from "../client";
+import { Tags } from "../components";
 import "./Home.scss";
 
-const tags = ["React", "CSS", "Career", "JavaScript", "Other"];
+// const tags = ["React", "CSS", "Career", "JavaScript", "Other"];
 
 const HomePage = () => {
   // const [blogs, setBlogs] = useState([]);
@@ -52,13 +53,14 @@ const HomePage = () => {
         <aside>
           <section className="categories">
             <h2>Categories</h2>
-            <ul className="tags">
+            {/* <ul className="tags">
               {tags.map((tag) => (
                 <li key={`${tag}-key`}>
                   <Link to={`/posts/${tag}`}>{tag}</Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            <Tags />
           </section>
           <section className="popular-content">
             <h2>Popular Posts</h2>

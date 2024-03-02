@@ -5,35 +5,6 @@ section h2 {
   color: var(--color-secondary);
 }
 
-.blog-previews {
-  max-width: 700px;
-  margin: 4em auto 0 auto;
-
-  ul {
-    .blog-preview {
-      margin-top: 1.5em;
-
-      h3 {
-        text-transform: capitalize;
-        font-size: 2rem;
-        cursor: pointer;
-
-        &:hover {
-          color: var(--color-primary);
-        }
-      }
-      p {
-        margin-top: 0.3em;
-      }
-      a {
-        display: inline-block;
-        margin-top: 0.2em;
-        font-weight: 800;
-      }
-    }
-  }
-}
-
 aside {
   //   margin-top: 4em;
 }
