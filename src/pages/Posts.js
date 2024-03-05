@@ -5,8 +5,25 @@ import { Tags } from "../components";
 
 const PostsPage = () => {
   const blogs = useRouteLoaderData("blog-data");
+  const params = useParams();
 
-  const filteredBlogs = [];
+  console.log(blogs);
+
+  const tag = params.tag;
+  let filteredBlogs = [];
+
+  if (!tag) {
+    filteredBlogs = blogs;
+  }
+
+  if (tag) {
+    // note that we are using blog.tag[0] because we plan on implementing multiple tags later on if needed
+    filteredBlogs = blogs.filter((blog) => {
+      // blog.tags[0] === tag
+      // console.log(blog.tags[0]);
+      return blog.tags?.[0] === tag;
+    });
+  }
 
   return (
     <main>
@@ -18,7 +35,7 @@ const PostsPage = () => {
           </section>
           <section className="blog-previews">
             <ul>
-              {blogs.map((blog) => (
+              {filteredBlogs.map((blog) => (
                 <li className="blog-preview" key={blog.title}>
                   <h3>{blog.title}</h3>
                   <p>{blog.preview}</p>
