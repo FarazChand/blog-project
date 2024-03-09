@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouteLoaderData, Link, useParams } from "react-router-dom";
 
-import { Tags } from "../components";
+import { Tags, BlogPreview } from "../components";
 
 const PostsPage = () => {
   const blogs = useRouteLoaderData("blog-data");
@@ -36,11 +36,12 @@ const PostsPage = () => {
           <section className="blog-previews">
             <ul>
               {filteredBlogs.map((blog) => (
-                <li className="blog-preview" key={blog.title}>
-                  <h3>{blog.title}</h3>
-                  <p>{blog.preview}</p>
-                  <Link to={`/posts/post/${blog.title}`}>Read more</Link>
-                </li>
+                // <li className="blog-preview" key={blog.title}>
+                //   <h3>{blog.title}</h3>
+                //   <p>{blog.preview}</p>
+                //   <Link to={`/posts/post/${blog.title}`}>Read more</Link>
+                // </li>
+                <BlogPreview blog={blog} />
               ))}
             </ul>
           </section>

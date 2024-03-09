@@ -56,24 +56,3 @@ function App() {
 }
 
 export default App;
-
-function pyramid(n) {
-  for (let row = 0; row < n + (n - 1); row++) {
-    let bricks = "";
-
-    for (let col = 0; col < n + (n - 1); col++) {
-      if (col >= n - (row + 1) && col <= n + (row - 1)) {
-        bricks += "#";
-      } else {
-        bricks += " ";
-      }
-    }
-
-    console.log(bricks);
-  }
-  return;
-}
-
-pyramid(3);
-pyramid(4);
-pyramid(5);
