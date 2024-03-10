@@ -5,20 +5,13 @@ import { FaArrowRight } from "react-icons/fa";
 
 import { urlFor, client } from "../client";
 import { Tags, BlogPreview } from "../components";
+import { sortByDates } from "../helpers/helpers";
 import "./Home.scss";
 
 const HomePage = () => {
-  // const [blogs, setBlogs] = useState([]);
-
-  // useEffect(() => {
-  //   const query = "*[_type == 'blog']";
-
-  //   client.fetch(query).then((data) => {
-  //     setBlogs(data);
-  //   });
-  // }, []);
-
   const blogs = useRouteLoaderData("blog-data");
+
+  const sortedBlogs = sortByDates(blogs);
 
   const popularTitles = [
     "How to be JS Master",
@@ -39,7 +32,7 @@ const HomePage = () => {
         <section className="blog-previews">
           <h2>Recently Published</h2>
           <ul>
-            {blogs.map((blog) => (
+            {sortedBlogs.map((blog) => (
               // <li className="blog-preview" key={blog.title}>
               //   <h3>{blog.title}</h3>
               //   <p>{blog.preview}</p>
