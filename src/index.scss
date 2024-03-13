@@ -3,7 +3,8 @@
   --color-primary: hsl(245deg, 100%, 60%);
   --color-secondary: hsl(333deg, 100%, 45%);
   --color-tertiary: hsl(204deg, 67%, 85%);
-  --color-neutral-100: #fff;
+  --color-neutral-100: #efefef;
+  // --color-neutral-100: #e8e8e8;
   --color-text: hsl(222deg, 22%, 5%);
 
   /* Preset Fonts */
@@ -15,6 +16,26 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#app-dark-mode {
+  // all main header titles stay the same color
+  // sub-text/ sub headers turns whitish
+  // header turns to gray gradient
+  // main background turns black
+  // on blogs, section titles turn yellow
+  --color-tertiary: hsl(0, 0%, 18%);
+  --color-neutral-100: hsl(222deg, 22%, 5%);
+  --color-text: #d0d0d0;
+  color: var(--color-text);
+  background-color: var(--color-neutral-100);
+  transition: color 350ms ease 0s, background 350ms ease 0s;
+}
+
+#app-light-mode {
+  color: var(--color-text);
+  background-color: var(--color-neutral-100);
+  transition: color 350ms ease 0s, background 350ms ease 0s;
 }
 
 /* Basic Reset */
@@ -38,10 +59,11 @@ body {
   font-family: var(--ff-primary);
   font-size: 1.8rem;
   line-height: 1.7;
-  color: #333;
   font-weight: 400;
   margin: 0;
-  color: var(--color-text);
+  // color: var(--color-text);
+  // background-color: var(--color-neutral-100);
+  // transition: color 350ms ease 0s, background 350ms ease 0s;
 }
 
 main {

@@ -6,10 +6,11 @@ export const GeneralContext = createContext({
 });
 
 export default function GeneralContextProvider({ children }) {
-  const [darkMode, setdarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
+  // let icon = document.getElementById('toggle-darkMode');
   const handleDarkMode = () => {
-    setdarkMode(!darkMode);
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
   const generalCtx = {

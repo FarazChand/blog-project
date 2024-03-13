@@ -12,7 +12,28 @@ import { GeneralContext } from "../store/general-context";
 
 const HomePage = () => {
   const { darkModeValue, toggleDarkMode } = useContext(GeneralContext);
-  console.log(darkModeValue);
+
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sidebar = document.getElementById("sidebar");
+      const sidebarRect = sidebar.getBoundingClientRect();
+      const sidebarBottom = sidebarRect.top + sidebarRect.height;
+
+      if (sidebarBottom >= window.innerHeight) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+
+      console.log("scroll function triggers");
+    };
+    // console.log(isSticky);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isSticky]);
 
   const blogs = useRouteLoaderData("blog-data");
 
@@ -28,9 +49,6 @@ const HomePage = () => {
     "React, React, React!",
   ];
 
-  // if (blogs) {
-  // }
-
   return (
     <main>
       <div className="container">
@@ -38,16 +56,11 @@ const HomePage = () => {
           <h2>Recently Published</h2>
           <ul>
             {sortedBlogs.map((blog) => (
-              // <li className="blog-preview" key={blog.title}>
-              //   <h3>{blog.title}</h3>
-              //   <p>{blog.preview}</p>
-              //   <Link to={`/posts/post/${blog.title}`}>Read more</Link>
-              // </li>
               <BlogPreview blog={blog} />
             ))}
           </ul>
         </section>
-        <aside>
+        <aside id="sidebar" className={`sidebar ${isSticky ? "sticky" : ""}`}>
           <section className="categories">
             <h2>Categories</h2>
             <Tags />

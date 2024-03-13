@@ -68,6 +68,7 @@ const MainNavigation = () => {
                 <MdDarkMode
                   className="mobile-darkmode-icon"
                   onClick={toggleDarkMode}
+                  id="toggle-darkMode"
                 />
               </div>
             </motion.div>
@@ -76,7 +77,11 @@ const MainNavigation = () => {
       </nav>
       {/* <div className="nightmode">nightmode</div>
        */}
-      <MdDarkMode className="darkmode-icon" onClick={toggleDarkMode} />
+      <MdDarkMode
+        className="darkmode-icon"
+        onClick={toggleDarkMode}
+        id="toggle-darkMode"
+      />
     </header>
   );
 };

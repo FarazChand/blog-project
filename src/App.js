@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useContext } from "react";
 
 import { loader as blogDataLoader } from "./pages/Home";
+import { GeneralContext } from "./store/general-context";
 
 import {
   AboutPage,
@@ -12,6 +14,8 @@ import {
 } from "./pages";
 
 function App() {
+  const { darkModeValue } = useContext(GeneralContext);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -49,7 +53,10 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      id={darkModeValue ? "app-dark-mode" : "app-light-mode"}
+    >
       <RouterProvider router={router} />
     </div>
   );
