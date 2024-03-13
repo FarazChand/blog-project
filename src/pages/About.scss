@@ -3,4 +3,24 @@
 
   max-width: 700px;
   width: 100%;
+
+  .about-sub-section {
+    margin-top: 2em;
+  }
+
+  section h2 {
+    margin-top: 2em;
+    font-size: 2rem;
+  }
+
+  .about-content {
+    margin-top: 0.5em;
+
+    p {
+      margin-top: 1em;
+    }
+    p:first-child {
+      margin-top: 0;
+    }
+  }
 }

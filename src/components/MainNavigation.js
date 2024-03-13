@@ -4,10 +4,13 @@ import { MdDarkMode } from "react-icons/md";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
+import { useContext } from "react";
 import "./MainNavigation.scss";
+import { GeneralContext } from "../store/general-context";
 
 const MainNavigation = () => {
   const [toggle, setToggle] = useState(false);
+  const { toggleDarkMode } = useContext(GeneralContext);
 
   return (
     <header className="header">
@@ -62,7 +65,10 @@ const MainNavigation = () => {
                 ))}
               </ul>
               <div className="icon-container">
-                <MdDarkMode className="mobile-darkmode-icon" />
+                <MdDarkMode
+                  className="mobile-darkmode-icon"
+                  onClick={toggleDarkMode}
+                />
               </div>
             </motion.div>
           )}
@@ -70,7 +76,7 @@ const MainNavigation = () => {
       </nav>
       {/* <div className="nightmode">nightmode</div>
        */}
-      <MdDarkMode className="darkmode-icon" />
+      <MdDarkMode className="darkmode-icon" onClick={toggleDarkMode} />
     </header>
   );
 };

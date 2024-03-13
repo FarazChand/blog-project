@@ -13,7 +13,7 @@ const BlogPage = () => {
   return (
     <main>
       <div className="container">
-        <section className="blog-section">
+        <section className="blog-section main-section">
           {selectedBlog.title && <h1>{selectedBlog.title}</h1>}
           {selectedBlog.paragraph.map((section) => (
             <div key={section.id}>

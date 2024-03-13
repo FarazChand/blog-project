@@ -28,7 +28,7 @@ const PostsPage = () => {
   return (
     <main>
       <div className="container">
-        <section className="blog-section">
+        <section className="main-section">
           <section className="tag-section">
             <h2>Pick a Topic:</h2>
             <Tags />

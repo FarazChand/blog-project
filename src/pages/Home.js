@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import { Link, useRouteLoaderData, json } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
@@ -7,8 +8,12 @@ import { urlFor, client } from "../client";
 import { Tags, BlogPreview } from "../components";
 import { sortByDates } from "../helpers/helpers";
 import "./Home.scss";
+import { GeneralContext } from "../store/general-context";
 
 const HomePage = () => {
+  const { darkModeValue, toggleDarkMode } = useContext(GeneralContext);
+  console.log(darkModeValue);
+
   const blogs = useRouteLoaderData("blog-data");
 
   const sortedBlogs = sortByDates(blogs);
