@@ -11,32 +11,30 @@ import "./Home.scss";
 import { GeneralContext } from "../store/general-context";
 
 const HomePage = () => {
-  const { darkModeValue, toggleDarkMode } = useContext(GeneralContext);
-
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Gets sidebar through DOM, gets the bounding rectangle dimensions of the sidebar
       const sidebar = document.getElementById("sidebar");
       const sidebarRect = sidebar.getBoundingClientRect();
-      const sidebarBottom = sidebarRect.top + sidebarRect.height;
 
-      if (sidebarBottom >= window.innerHeight) {
+      // Checks to see if the top of the rectangle has reached the top of the window - sets state to sticky if true and removes if false
+      if (sidebarRect.top <= 0) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
       }
-
-      console.log("scroll function triggers");
     };
-    // console.log(isSticky);
 
+    // adding an event listener to the window on scroll
     window.addEventListener("scroll", handleScroll);
+
+    // cleanup function that removes the event listener when the component unmounts
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isSticky]);
 
   const blogs = useRouteLoaderData("blog-data");
-
   const sortedBlogs = sortByDates(blogs);
 
   const popularTitles = [
@@ -60,12 +58,15 @@ const HomePage = () => {
             ))}
           </ul>
         </section>
-        <aside id="sidebar" className={`sidebar ${isSticky ? "sticky" : ""}`}>
+        <aside>
           <section className="categories">
             <h2>Categories</h2>
             <Tags />
           </section>
-          <section className="popular-content">
+          <section
+            id="sidebar"
+            className={`sidebar ${isSticky ? "sticky" : ""} popular-content`}
+          >
             <h2>Popular Posts</h2>
             <ul>
               {popularTitles.map((title) => (

@@ -3,9 +3,10 @@
   --color-primary: hsl(245deg, 100%, 60%);
   --color-secondary: hsl(333deg, 100%, 45%);
   --color-tertiary: hsl(204deg, 67%, 85%);
+  --color-tertiary-2: hsl(204, 65%, 69%);
   --color-neutral-100: #efefef;
-  // --color-neutral-100: #e8e8e8;
   --color-text: hsl(222deg, 22%, 5%);
+  --color-text-2: hsl(0, 0%, 40%);
 
   /* Preset Fonts */
   --ff-primary: "Poppins", sans-serif;
@@ -25,6 +26,7 @@
   // main background turns black
   // on blogs, section titles turn yellow
   --color-tertiary: hsl(0, 0%, 18%);
+  --color-tertiary-2: hsl(0, 0%, 25%);
   --color-neutral-100: hsl(222deg, 22%, 5%);
   --color-text: #d0d0d0;
   color: var(--color-text);

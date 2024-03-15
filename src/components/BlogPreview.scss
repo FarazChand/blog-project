@@ -7,3 +7,33 @@
   font-size: 1.5rem;
   font-style: italic;
 }
+
+.blog-preview:hover h3 {
+  color: var(--color-primary);
+}
+
+// .blog-preview:hover .read-more {
+//   color: var(--color-primary);
+// }
+
+.blog-preview:hover .blog-preview-text {
+  color: var(--color-text-2);
+}
+
+.blog-preview-link {
+  text-decoration: none;
+  // color: inherit;
+  position: relative;
+  z-index: 0;
+}
+
+.blog-preview-link:hover::before {
+  content: ""; /* Create the pseudo-element */
+  position: absolute;
+  top: -5px; /* Adjust the position of the border */
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  border: 2px solid /* Your border color */;
+  z-index: -10; /* Ensure the border is behind the content */
+}

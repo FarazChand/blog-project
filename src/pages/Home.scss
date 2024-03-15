@@ -4,13 +4,14 @@ section h2 {
   font-weight: 500;
   color: var(--color-secondary);
 }
+
 .blog-previews {
   overflow-y: auto;
 }
 
 .sidebar {
   align-self: flex-start;
-  overflow-y: auto;
+  // overflow-y: auto;
 }
 
 .sidebar.sticky {

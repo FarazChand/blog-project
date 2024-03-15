@@ -8,8 +8,10 @@ const Tags = () => {
   return (
     <ul className="tags">
       {tags.map((tag) => (
-        <li key={`${tag}-key`}>
-          <Link to={`/posts/${tag}`}>{tag}</Link>
+        <li key={`${tag}-key`} className="tag">
+          <Link className="link-text" to={`/posts/${tag}`}>
+            {tag}
+          </Link>
         </li>
       ))}
     </ul>
