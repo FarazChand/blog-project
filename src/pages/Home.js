@@ -49,7 +49,7 @@ const HomePage = () => {
 
   return (
     <main>
-      <div className="container">
+      <div className="container home-container">
         <section className="blog-previews">
           <h2>Recently Published</h2>
           <ul>
