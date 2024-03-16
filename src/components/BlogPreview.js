@@ -13,9 +13,7 @@ const BlogPreview = ({ blog }) => {
         <h3>{blog.title}</h3>
         <p className="blog-preview-text">{formattedString}</p>
         <div className="preview-footer">
-          <Link to={`/posts/post/${blog.title}`} className="read-more">
-            Read more
-          </Link>
+          <p className="read-more">Read more</p>
           <p className="preview-date">{formatDate(blog._createdAt)}</p>
         </div>
       </li>

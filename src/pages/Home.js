@@ -37,11 +37,11 @@ const HomePage = () => {
   const blogs = useRouteLoaderData("blog-data");
   const sortedBlogs = sortByDates(blogs);
 
-  const popularTitles = [
-    "How to be JS Master",
-    "Top 5 CSS Tricks",
-    "What to do to Improve your Design",
-    "Biggest Mistakes when Making a Website",
+  const recommendedTitles = [
+    "JavaScript ES6: Embracing the Future of JavaScript",
+    "Empower Your Layouts with CSS Flexbox",
+    "Optimizing React with JavaScript Design Patterns",
+    "Essential JavaScript Concepts to Grasp Before Diving into React",
     "What JS Framework should you use?",
     "What is a good Salary for Web Development?",
     "React, React, React!",
@@ -54,7 +54,7 @@ const HomePage = () => {
           <h2>Recently Published</h2>
           <ul>
             {sortedBlogs.map((blog) => (
-              <BlogPreview blog={blog} />
+              <BlogPreview blog={blog} key={blog.title} />
             ))}
           </ul>
         </section>
@@ -67,9 +67,9 @@ const HomePage = () => {
             id="sidebar"
             className={`sidebar ${isSticky ? "sticky" : ""} popular-content`}
           >
-            <h2>Popular Posts</h2>
+            <h2>Recommended</h2>
             <ul>
-              {popularTitles.map((title) => (
+              {recommendedTitles.map((title) => (
                 <li key={title}>
                   <span>
                     <FaArrowRight />

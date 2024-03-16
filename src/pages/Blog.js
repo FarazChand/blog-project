@@ -7,6 +7,9 @@ const BlogPage = () => {
   const { blogId } = useParams();
   const blogs = useRouteLoaderData("blog-data");
 
+  console.log(blogs);
+  console.log(blogId);
+
   const selectedBlog = blogs.find((blog) => blog.title === blogId);
 
   console.log(selectedBlog);
