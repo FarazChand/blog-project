@@ -6,7 +6,8 @@ section h2 {
 }
 
 .blog-previews {
-  overflow-y: auto;
+  // overflow-y: auto;
+  overflow: hidden;
 }
 
 .sidebar {

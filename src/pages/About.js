@@ -46,6 +46,20 @@ const AboutPage = () => (
         </section>
 
         <section>
+          <h2>Design Inspiration</h2>
+          <p>
+            I drew inspiration from{" "}
+            <a href="https://www.joshwcomeau.com/" className="offsite-link">
+              Josh W. Comeau's website
+            </a>{" "}
+            while creating this site, primarily for educational purposes. While
+            I aimed to replicate most elements, I've made modifications to suit
+            my needs and style. I appreciate Josh W. Comeau's contributions to
+            the design community, which have influenced my own design journey.
+          </p>
+        </section>
+
+        <section>
           <h2>Contact Us</h2>
           <div className="about-content">
             <p>

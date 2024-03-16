@@ -152,10 +152,9 @@ header {
         margin: 1rem;
 
         a {
-          color: black;
+          color: var(--color-text);
           text-decoration: none;
           font-size: 1.6rem;
-          // text-transform: uppercase;
           font-weight: 500;
 
           transition: all 0.3s ease-in-out;

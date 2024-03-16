@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Tags.scss";
-
-const tags = ["React", "CSS", "Career", "JavaScript", "Other"];
+import { tags } from "../constants/constants";
 
 const Tags = () => {
   return (
