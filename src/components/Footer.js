@@ -38,7 +38,11 @@ const Footer = () => {
             <ul className="links-list">
               {socialLinks.map((link) => (
                 <li key={`${link.name}--key`} className="tag">
-                  <a className="footer-link-text" href={link.link}>
+                  <a
+                    className="footer-link-text"
+                    href={link.link}
+                    target="_blank"
+                  >
                     {link.name}
                   </a>
                 </li>
