@@ -42,9 +42,9 @@ const HomePage = () => {
     "Empower Your Layouts with CSS Flexbox",
     "Optimizing React with JavaScript Design Patterns",
     "Essential JavaScript Concepts to Grasp Before Diving into React",
-    "What JS Framework should you use?",
-    "What is a good Salary for Web Development?",
-    "React, React, React!",
+    "A Beginner's Guide to Self Taught Coding",
+    "Key React Concepts to Master Before Exploring Next.js",
+    "Empower Your Layouts with CSS Flexbox",
   ];
 
   return (
