@@ -26,7 +26,7 @@ const PostsPage = () => {
   }
 
   return (
-    <main>
+    <main className="main-flex">
       <div className="container">
         <section className="main-section">
           <section className="tag-section">
@@ -35,8 +35,8 @@ const PostsPage = () => {
           </section>
           <section className="blog-previews">
             <ul>
-              {filteredBlogs.map((blog) => (
-                <BlogPreview blog={blog} />
+              {filteredBlogs.map((blog, index) => (
+                <BlogPreview blog={blog} key={index} />
               ))}
             </ul>
           </section>

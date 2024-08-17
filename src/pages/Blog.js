@@ -14,7 +14,7 @@ const BlogPage = () => {
 
   console.log(selectedBlog);
   return (
-    <main>
+    <main className="main-flex">
       <div className="container">
         <section className="blog-section main-section">
           {selectedBlog.title && <h1>{selectedBlog.title}</h1>}

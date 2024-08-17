@@ -8,7 +8,7 @@ import FormSubmit from "../components/FormSubmit";
 import "./Contact.scss";
 
 const ContactPage = () => (
-  <main>
+  <main className="main-flex">
     <div className="container contact-container">
       <div className="main-section contact-section">
         <section>

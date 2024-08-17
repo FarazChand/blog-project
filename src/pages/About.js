@@ -3,7 +3,7 @@ import React from "react";
 import "./About.scss";
 
 const AboutPage = () => (
-  <main>
+  <main className="main-flex">
     <div className="container">
       <section className="main-section">
         <section className="about-sub-section">

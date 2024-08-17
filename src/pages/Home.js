@@ -5,7 +5,7 @@ import { Link, useRouteLoaderData, json } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 import { urlFor, client } from "../client";
-import { Tags, BlogPreview } from "../components";
+import { Tags, BlogPreview, Hero } from "../components";
 import { sortByDates } from "../helpers/helpers";
 import "./Home.scss";
 import { GeneralContext } from "../store/general-context";
@@ -49,38 +49,41 @@ const HomePage = () => {
 
   return (
     <main>
-      <div className="container home-container">
-        <section className="blog-previews">
-          <h2>Recently Published</h2>
-          <ul>
-            {sortedBlogs.map((blog) => (
-              <BlogPreview blog={blog} key={blog.title} />
-            ))}
-          </ul>
-        </section>
-        <aside>
-          <section className="categories">
-            <h2>Categories</h2>
-            <Tags />
-          </section>
-          <section
-            id="sidebar"
-            className={`sidebar ${isSticky ? "sticky" : ""} popular-content`}
-          >
-            <h2>Recommended</h2>
+      <Hero />
+      <div className="main-flex">
+        <div className="container home-container">
+          <section className="blog-previews">
+            <h2>Recently Published</h2>
             <ul>
-              {recommendedTitles.map((title) => (
-                <li key={title}>
-                  <span>
-                    <FaArrowRight />
-                  </span>
-                  {/* <FaArrowRight /> */}
-                  <Link to={`/posts/post/${title}`}>{title}</Link>
-                </li>
+              {sortedBlogs.map((blog) => (
+                <BlogPreview blog={blog} key={blog.title} />
               ))}
             </ul>
           </section>
-        </aside>
+          <aside>
+            <section className="categories">
+              <h2>Categories</h2>
+              <Tags />
+            </section>
+            <section
+              id="sidebar"
+              className={`sidebar ${isSticky ? "sticky" : ""} popular-content`}
+            >
+              <h2>Recommended</h2>
+              <ul>
+                {recommendedTitles.map((title) => (
+                  <li key={title}>
+                    <span>
+                      <FaArrowRight />
+                    </span>
+                    {/* <FaArrowRight /> */}
+                    <Link to={`/posts/post/${title}`}>{title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </aside>
+        </div>
       </div>
     </main>
   );
