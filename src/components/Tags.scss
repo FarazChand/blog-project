@@ -17,6 +17,10 @@
     }
   }
 
+  .tag.active-tag {
+    background-color: var(--color-tertiary-2);
+  }
+
   a {
     text-transform: capitalize;
     font-size: 1.3rem;

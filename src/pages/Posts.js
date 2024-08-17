@@ -31,7 +31,7 @@ const PostsPage = () => {
         <section className="main-section">
           <section className="tag-section">
             <h2>Pick a Topic:</h2>
-            <Tags />
+            <Tags currentTag={tag} />
           </section>
           <section className="blog-previews">
             <ul>
