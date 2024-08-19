@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouteLoaderData, Link, useParams } from "react-router-dom";
+import "./Posts.scss";
 
 import { sortByDates } from "../helpers/helpers";
 
@@ -28,13 +29,20 @@ const PostsPage = () => {
   return (
     <main className="main-flex">
       <div className="container">
-        <section className="main-section">
+        <section className="main-section blog-main-section">
           <section className="tag-section">
             <h2>Pick a Topic:</h2>
             <Tags currentTag={tag} />
           </section>
-          <section className="blog-previews">
+
+          <section className="blog-previews blog-main-section">
             <ul>
+              {filteredBlogs.length < 1 && (
+                <p className="blogs-empty-text">
+                  Sorry! No blogs for this topic at this time. Please check
+                  again later!
+                </p>
+              )}
               {filteredBlogs.map((blog, index) => (
                 <BlogPreview blog={blog} key={index} />
               ))}

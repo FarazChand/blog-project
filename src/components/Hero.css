@@ -1,8 +1,29 @@
 #hero {
-  /* min-height: 67svh; */
-  min-height: 800px;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 800px; */
 
   width: auto;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url(../assets/bg-image2.jpg) no-repeat center / cover;
+}
+
+.hero-content {
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-paragraph {
+  color: #efefef;
+  max-width: 600px;
+  font-size: 1.5rem;
+  text-align: center;
 }
