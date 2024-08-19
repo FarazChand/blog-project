@@ -5,6 +5,21 @@ header {
   padding: 1em 0;
   background-color: var(--color-neutral-100);
 
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 20;
+  transition: background-color 0.3s ease;
+
+  &.scrolled-light {
+    background-color: var(--color-tertiary);
+  }
+
+  &.scrolled-dark {
+    background-color: rgb(55, 7, 213);
+  }
+
   .navbar {
     width: 100%;
     max-width: 1000px;
@@ -73,7 +88,7 @@ header {
     width: 25px;
     align-self: center;
     margin-right: 5em;
-    color: grey;
+    color: var(--color-primary);
     transition: color 0.3s ease;
 
     &:hover {

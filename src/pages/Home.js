@@ -44,7 +44,7 @@ const HomePage = () => {
     "Essential JavaScript Concepts to Grasp Before Diving into React",
     "A Beginner's Guide to Self Taught Coding",
     "Key React Concepts to Master Before Exploring Next.js",
-    "Empower Your Layouts with CSS Flexbox",
+    "10 Common CSS Mistakes and How to Avoid Them",
   ];
 
   return (

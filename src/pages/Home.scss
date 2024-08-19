@@ -21,6 +21,9 @@ section h2 {
 
 .sidebar.sticky {
   position: sticky;
+
+  padding-top: 80px;
+
   top: 0;
 }
 
@@ -31,7 +34,8 @@ section h2 {
 
 .popular-content {
   max-width: 700px;
-  margin: 4em auto 0 auto;
+  margin: 2em auto 0 auto;
+  padding-top: 3rem;
 
   ul {
     margin-top: 1.5em;

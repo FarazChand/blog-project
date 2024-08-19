@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { MdDarkMode } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -10,10 +10,29 @@ import { GeneralContext } from "../store/general-context";
 
 const MainNavigation = () => {
   const [toggle, setToggle] = useState(false);
-  const { toggleDarkMode } = useContext(GeneralContext);
+  const [scroll, setScroll] = useState(false);
+  const { toggleDarkMode, darkModeValue } = useContext(GeneralContext);
+
+  const headerIsScrolled = () => {
+    if (window.scrollY >= 20) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", headerIsScrolled);
+    return () => {
+      window.removeEventListener("scroll", headerIsScrolled);
+    };
+  }, []);
+
+  // const scrolledClass = darkModeValue ? "scrolled-light" : "scrolled-dark";
 
   return (
-    <header className="header">
+    // <header className={`header ${scroll ? scrolledClass : ""}`}>
+    <header className={`header ${scroll ? "scrolled-light" : ""}`}>
       {/* <div className="app__navbar-logo">
         <img src={images.logo} alt="logo" />
       </div> */}
